@@ -23,4 +23,36 @@
 ![avatar](https://github.com/MockingT/3D_Game-7/blob/master/pictures/10ed31a567830c3a11e28d28f41d1d2.png)  
 ![avatar](https://github.com/MockingT/3D_Game-7/blob/master/pictures/11df99605dc60d4959b8c4f4d3b0ed7.png)  
 #### 实现不同颜色的光循环变化  
-- 创建好一个test脚本，挂到第一个子系统中去（主要的发光部分）
+- 创建好一个test脚本，挂到第一个子系统中去（主要的发光部分）  
+每次调用update函数，都改变粒子系统的startColor，这样当它每一次重新发光时，都是不同的颜色。代码部分也比较简单，下面贴出来。  
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    public class test : MonoBehaviour {
+
+        public ParticleSystem particleSystem;
+        public int i = 0;
+
+        void Start()
+        {
+        }
+
+        void Update()
+        {
+            if (i == 0)
+                particleSystem.startColor = Color.red;
+            else if (i == 1)
+                particleSystem.startColor = Color.yellow;
+            else if (i == 2)
+                particleSystem.startColor = Color.green;
+            else if (i == 3)
+                particleSystem.startColor = Color.blue;
+            else if (i == 4)
+                particleSystem.startColor = Color.white;
+            i++;
+            i = i % 5;
+            particleSystem.startRotation = 1.0f;
+        }
+    }
