@@ -22,4 +22,5 @@
 ![avatar](https://github.com/MockingT/3D_Game-7/blob/master/pictures/1150d4ac85972483e1a03bec9f387d1.png)  
 ![avatar](https://github.com/MockingT/3D_Game-7/blob/master/pictures/10ed31a567830c3a11e28d28f41d1d2.png)  
 ![avatar](https://github.com/MockingT/3D_Game-7/blob/master/pictures/11df99605dc60d4959b8c4f4d3b0ed7.png)  
-
+#### 实现不同颜色的光循环变化  
+- 创建好一个test脚本，挂到第一个子系统中去（主要的发光部分）
