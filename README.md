@@ -26,33 +26,33 @@
 - 创建好一个test脚本，挂到第一个子系统中去（主要的发光部分）  
 每次调用update函数，都改变粒子系统的startColor，这样当它每一次重新发光时，都是不同的颜色。代码部分也比较简单，下面贴出来。  
 
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+        using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
 
-    public class test : MonoBehaviour {
+        public class test : MonoBehaviour {
 
-        public ParticleSystem particleSystem;
-        public int i = 0;
+            public ParticleSystem particleSystem;
+            public int i = 0;
 
-        void Start()
-        {
+            void Start()
+            {
+            }
+
+            void Update()
+            {
+                if (i == 0)
+                    particleSystem.startColor = Color.red;
+                else if (i == 1)
+                    particleSystem.startColor = Color.yellow;
+                else if (i == 2)
+                    particleSystem.startColor = Color.green;
+                else if (i == 3)
+                    particleSystem.startColor = Color.blue;
+                else if (i == 4)
+                    particleSystem.startColor = Color.white;
+                i++;
+                i = i % 5;
+                particleSystem.startRotation = 1.0f;
+            }
         }
-
-        void Update()
-        {
-            if (i == 0)
-                particleSystem.startColor = Color.red;
-            else if (i == 1)
-                particleSystem.startColor = Color.yellow;
-            else if (i == 2)
-                particleSystem.startColor = Color.green;
-            else if (i == 3)
-                particleSystem.startColor = Color.blue;
-            else if (i == 4)
-                particleSystem.startColor = Color.white;
-            i++;
-            i = i % 5;
-            particleSystem.startRotation = 1.0f;
-        }
-    }
